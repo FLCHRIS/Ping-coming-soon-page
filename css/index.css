@@ -28,7 +28,7 @@ body::-webkit-scrollbar-thumb {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4em 0;
+  padding: 4em 0 5em;
 }
 .main__data .data__logo {
   margin-bottom: 3em;
@@ -130,7 +130,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
   gap: 2em;
-  margin: 6em 0 3em;
+  margin: 6em 0 2em;
 }
 .main__data .data__social a {
   color: hsl(223deg, 87%, 63%);
