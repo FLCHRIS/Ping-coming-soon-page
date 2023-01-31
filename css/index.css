@@ -95,6 +95,7 @@ body::-webkit-scrollbar-thumb {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 .main__data .form .form__modal label {
   font-size: 1.5rem;
