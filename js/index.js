@@ -1,33 +1,23 @@
-const button = document.querySelector('.message-button');
-const submit = document.querySelector('.form-submit');
-
 let validEmail =  /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
+const buttonSubmit = document.querySelector('.form__submit');
 
-submit.addEventListener('click', e => {
+buttonSubmit.addEventListener('click',  e => {
     e.preventDefault();
-
-    const email = document.querySelector('.form-email');
-    const alert = document.querySelector('.form__message');
-    
-	if(email.value === ''){
-        document.querySelector('.message-paragraph').innerHTML = 'Empty fields';
-        document.querySelector('.form-panel').classList.toggle('form-show');
-        alert.classList.toggle('form-show');
+    let email = document.querySelector('.form__email');
+    if(!validEmail.test(email.value) || email.value == '') {
+        email.classList.toggle('form__email-error');
+        email.placeholder = 'Please provide a valid email address';
+        setTimeout(() => {
+            email.classList.toggle('form__email-error');
+            email.placeholder = 'Your email address...';
+        }, 2000)
     }else {
-        if(validEmail.test(email.value)){
-            document.querySelector('.message-paragraph').innerHTML = 'Check your email please.';
-        }else{
-            document.querySelector('.message-paragraph').innerHTML = 'Please Provide a valid email address.';
-        }
-        document.querySelector('.form-panel').classList.toggle('form-show');
-        alert.classList.toggle('form-show');
+        document.querySelector('.form__modal').classList.toggle('form__modal-show');
+        setTimeout(() => {
+            email.value = '';
+            document.querySelector('.form__modal').classList.toggle('form__modal-show');
+        }, 2500);
     }
-})
-
-button.addEventListener('click', () => {
-    const alert = document.querySelector('.form__message');
-    document.querySelector('.form-panel').classList.toggle('form-show');
-    alert.classList.toggle('form-show');
-})
-
+});
+AOS.init();

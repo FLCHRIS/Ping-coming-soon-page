@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+$Blue: hsl(223, 87%, 63%);
+$PaleBlue: hsl(223, 100%, 88%);
+$LightRed: hsl(354, 100%, 66%);
+$Gray: hsl(0, 0%, 59%);
+$VeryDarkBlue: hsl(209, 33%, 12%);
+
+$fontFranklin: 'Libre Franklin', sans-serif;
+
+html {
+    font-size: 62.5%;
+}
+body {
+    &::-webkit-scrollbar{
+        width: 12px;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: $Blue;
+        border-radius: 2px;
+    }
+}
+.main {
+    font-size: 1.5rem;
+    font-family: $fontFranklin;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__data {
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 4em 0 5em;
+        .data__logo {
+            margin-bottom: 3em;
+            img {
+                width: 7em;
+            }
+        }
+        .data__title {
+            font-size: 2.6rem;
+            color: $Gray;
+            font-weight: 600;
+            text-align: center;
+            span {
+                color: $VeryDarkBlue;
+                font-weight: 600;
+            }
+        }
+        .data__paragraph {
+            margin: 1.5em 0 2.5em;
+            font-size: 1.5rem;
+            color: $VeryDarkBlue;
+        }
+        .form {
+            width: 90%;
+            margin-bottom: 3em;
+            input {
+                outline: none;
+                width: 100%;
+                padding: .7em 1.4em;
+                border-radius: 1.5em;
+                border: none;
+                font-size: 1.5rem;
+            }
+            .form__email {
+                border: 1px solid $Gray;
+                color: $VeryDarkBlue;
+                margin-bottom: 1.5em;
+            }
+            .form__email-error {
+                border: 1px solid $LightRed;
+                &::placeholder {
+                    color: $LightRed;
+                }
+            }
+            .form__modal {
+                clip-path: circle(0.0% at 50% 50%);
+                transition: clip-path .5s ease-in-out;
+                position: fixed;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(#000,0.5);
+                top: 0;
+                left: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                label {
+                    font-size: 1.5rem;
+                    padding: 3em 2em;
+                    color: $Blue;
+                    border-radius: .7em;
+                    background: #fff;
+                    font-weight: 600;
+                    text-align: center;
+                    img {
+                        width: 6em;
+                        margin: 2em auto 0;
+                    }
+                }
+            }
+            .form__modal-show {
+                clip-path: circle(70.7% at 50% 50%);
+            }
+            .form__submit {
+                cursor: pointer;
+                background-color: $Blue;
+                color: #fff;
+                font-weight: 600;
+                box-shadow: 0px 10px 5px 0px rgba($Blue,0.15);
+            }
+        }
+        .data__illustration {
+            width: 100%;
+            max-width: 600px;
+        }
+        .data__social {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2em;
+            margin: 6em 0 2em;
+            a {
+                color: $Blue;
+                transition: transform .3s, color .3s;
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    bottom: -5px;
+                    border-radius: 5px;
+                    background-color: $Blue;
+                    clip-path: circle(0.0% at 50% 50%);
+                    transition: clip-path .3s, background-color .3s;
+                }
+                &:hover::before {
+                    clip-path: circle(70.7% at 50% 50%);
+                    background-color: $LightRed;
+                }
+                &:hover {
+                    transform: translateY(-.5em);
+                    color: $LightRed;
+                }
+            }
+        }
+        .data__copy {
+            font-size: 1.5rem;
+            color: $VeryDarkBlue;
+            font-weight: 600;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (min-width: 700px){
+    .main {
+        &__data {
+            width: 90%;
+            padding: 4em 0;
+            .data__logo {
+                margin-bottom: 3em;
+                img {
+                    width: 8em;
+                }
+            }
+            .data__title {
+                font-size: 2.8rem;
+            }
+            .data__paragraph {
+                font-size: 1.6rem;
+            }
+            .form {
+                width: 90%;
+                max-width: 800px;
+                display: flex;
+                flex-direction: row;
+                gap: 1em;
+                input {
+                    width: auto;
+                    font-size: 1.6rem;
+                }
+                .form__email {
+                    margin-bottom: 0;
+                    width: 70%;
+                }
+                .form__modal {
+                    label {
+                        font-size: 1.6rem;
+                        img {
+                            width: 7em;
+                        }
+                    }
+                }
+                .form__submit {
+                    width: 30%;
+                }
+            }
+            .data__illustration {
+                max-width: 800px;
+            }
+            .data__social {
+                gap: 2.5em;
+            }
+            .data__copy {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}

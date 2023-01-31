@@ -5,46 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <script src="https://kit.fontawesome.com/3478c33dcb.js" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./css/index.css">
-  <link rel="stylesheet" href="./css/normalice.css">
+  <link rel="stylesheet" href="./sass/index.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <title>Frontend Mentor | Ping coming soon page</title>
 </head>
 <body>
-  <main class="main container">
-    <img src="./images/logo.svg" alt="Ping" class="main-logo">
-    <h1 class="main-title">
-      We are launching <span>soon!</span>
-    </h1>
-    <p class="main-paragraph">
-      Subscribe and get notified
-    </p>
-    <form action="#" class="main__form">
-      <input type="email" name="email" class="form-email" placeholder="Your email address...">
-      <input type="submit" value="Notify Me" class="form-submit">
-    </form>
-    <div class="form-panel">
-      <div class="form__message">
-        <i class="fa-solid fa-circle-info fa-4x message-icon"></i>
-        <p class="message-paragraph">
-        </p>
-        <button class="message-button">X</button>
+  <main class="main">
+    <section class="main__data data">
+      <a href="#" class="data__logo" aria-label="Ping" data-aos="fade-down">
+        <img src="./images/logo.svg" alt="Ping">
+      </a>
+      <h1 class="data__title" data-aos="fade-left">
+        We are launching <span>soon!</span>
+      </h1>
+      <p class="data__paragraph" data-aos="fade-right">
+        Subscribe and get notified
+      </p>
+      <form action="#" class="data__form form" method="post" data-aos="zoom-in">
+        <input type="email" name="email" id="form__email" class="form__email" placeholder="Your email address...">
+        <div class="form__modal">
+          <label for="email">
+            Please provide a valid email address
+            <img src="./images/success.svg" alt="">
+          </label>
+        </div>
+        <input type="submit" value="Notify Me" class="form__submit" id="form__submit">
+      </form>
+      <img src="./images/illustration-dashboard.png" alt="" class="data__illustration" data-aos="flip-right">
+      <div class="data__social">
+        <a href="#" aria-label="Go to facebook" data-aos="flip-up">
+          <i class="fa-brands fa-facebook-f fa-xl"></i>
+        </a>
+        <a href="#" aria-label="Go to twitter" data-aos="flip-down">
+          <i class="fa-brands fa-twitter fa-xl"></i>
+        </a>
+        <a href="#" aria-label="Go to instagram" data-aos="flip-up">
+          <i class="fa-brands fa-instagram fa-xl"></i>
+        </a>
       </div>
-    </div>
-    <img src="./images/illustration-dashboard.png" alt="" aria-disabled="true" class="main-ilustration">
+      <p class="data__copy">
+        &copy; Copyright Ping. All rights reserved.
+      </p>
+    </section>
   </main>
-  <footer class="footer container">
-    <address class="footer__social">
-      <a href="#" class="social-cta"><i class="fa-brands fa-facebook-f fa-xl"></i></a>
-      <a href="#" class="social-cta"><i class="fa-brands fa-twitter fa-xl"></i></a>
-      <a href="#" class="social-cta"><i class="fa-brands fa-instagram fa-xl"></i></a>
-    </address>
-    <p class="footer-copy">
-      &copy; Copyright Ping. All rights reserved.
-    </p>
-    <p class="attribution">
-      Coded by <a href="https://github.com/flchris" target="_blank">CHRIS FLッ</a>.
-    </p>
-  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="./js/index.js"></script>
 </body>
 </html>
