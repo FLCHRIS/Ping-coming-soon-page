@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution URL]()
-- Live Site URL: [Live site URL]()
+- [Solution URL: ](https://www.frontendmentor.io/solutions/ping-coming-soon-page-59XWbaDzg4)
+- [Live site URL: ](https://preeminent-licorice-244181.netlify.app/)
 
 ## My process
 
